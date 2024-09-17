@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-200-lighter: hsl(148, 38%, 91%);
+    --green-600-medium: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --grey-500-medium: hsl(186, 15%, 59%);
+    --grey-900-darker: hsl(187, 24%, 22%);
+    --font-family: 'Karla', sans-serif;
+}
+
+body {
+    background: var(--green-200-lighter);
+    font-family: var(--font-family);
+}
+
+.main {
+    background: white;
+    border-radius: 1em;
+    margin: 2em 1em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: var(--grey-900-darker);
+}
+
+
+.form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+input {
+    padding: 1em;
+    border: 1px solid var(--grey-900-darker);
+    border-radius: 0.5em;
+}
+
+.radio {
+    padding: 0.5em 2em;
+    border: 1px solid var(--grey-900-darker);
+    border-radius: 0.5em;
+    display: flex;
+    gap: 1em;
+}
+
+.choice {
+    flex-direction: row !important; 
+}
+
+.radios {
+    display: grid;
+    gap: 1em;
+}
+
+textarea {
+    border: 1px solid var(--grey-900-darker);
+    border-radius: 0.5em;
+    padding: 2em;
+    color: var(--grey-900-darker);
+    font-weight: bold;
+}
+
+button {
+    padding: 1em;
+    font-weight: bold;
+    color: white;
+    background: var(--green-600-medium);
+    border: none;
+    border-radius: 0.5em;
+}
+
+footer {
+    padding: 0 2em 2em 2em;
+    text-align: center;
+}
+
+span {
+    color: green;
+}
+
+
+@media (min-width: 768px){
+    .main {
+        margin: 5em auto 2em auto;
+        width: 50%;
+    }
+    
+    .form {
+        display: grid;
+        grid-template-areas: 
+            'first last'
+            'email email'
+            'query query'
+            'message message'
+            'choice choice'
+            'submit submit'
+        ;
+    }
+
+    .radios {
+        display: flex;
+        gap: 1em;
+    }
+
+    .radios > div {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .first-name {
+        grid-area: first;
+    }
+
+    .last-name {
+        grid-area: last;
+    }
+    
+    .email {
+        grid-area: email;
+    }
+
+    .query {
+        grid-area: query;
+    }
+
+    .message {
+        grid-area: message;
+    }
+
+    .choice {
+        grid-area: choice;
+    }
+
+    .submit {
+        grid-area: submit;
+    }
+
+}
