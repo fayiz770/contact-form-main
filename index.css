@@ -18,44 +18,63 @@ body {
     font-family: var(--font-family);
 }
 
-.main {
-    background: white;
-    border-radius: 1em;
-    margin: 2em 1em;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    gap: 3em;
+.main,
+input,
+.radio,
+textarea,
+button {
+    border-radius: 0.5em;
 }
 
-.form {
+.main,
+.form,
+.form > div,
+.radio {
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.main {
+    background: white;
+    margin: 2em;
+    padding: 2em;
+}
+
+.form {
     color: var(--grey-900-darker);
 }
 
 
-.form > div {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
 input {
+    outline: 0;
+    cursor: pointer;
     padding: 1em;
     border: 1px solid var(--grey-900-darker);
-    border-radius: 0.5em;
 }
+
+input:hover,
+input:target {
+    border: 2px solid var(--green-600-medium);
+}
+
+
 
 .radio {
     padding: 0.5em 2em;
     border: 1px solid var(--grey-900-darker);
-    border-radius: 0.5em;
-    display: flex;
-    gap: 1em;
+    flex-direction: row !important;
 }
 
+.radio:hover{
+    background: var(--green-200-lighter);
+    border: 2px solid var(--green-600-medium);
+}
+
+input[type='radio'], 
+input[type='checkbox'] {
+    color: hsl(169, 82%, 27%);
+}
 .choice {
     flex-direction: row !important; 
 }
@@ -66,11 +85,15 @@ input {
 }
 
 textarea {
+    outline: 0;
     border: 1px solid var(--grey-900-darker);
-    border-radius: 0.5em;
     padding: 2em;
     color: var(--grey-900-darker);
     font-weight: bold;
+}
+
+textarea:hover {
+    border: 2px solid var(--green-600-medium);
 }
 
 button {
@@ -79,7 +102,10 @@ button {
     color: white;
     background: var(--green-600-medium);
     border: none;
-    border-radius: 0.5em;
+}
+
+button:hover {
+    background: hsl(169, 82%, 15%);
 }
 
 footer {
@@ -88,8 +114,27 @@ footer {
 }
 
 span {
+    margin-top: -10px;
+    padding-left: 1em;
+    color: var(--red);
+    font-size: 12px;
+}
+
+label > span {
     color: green;
 }
+
+input.error, textarea.error {
+    border: 2px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8em;
+    display: none;
+    margin-top: 5px;
+  }
+  
 
 
 @media (min-width: 768px){
