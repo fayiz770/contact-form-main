@@ -16,6 +16,7 @@
 body {
     background: var(--green-200-lighter);
     font-family: var(--font-family);
+    display: grid;
 }
 
 .main,
@@ -134,7 +135,23 @@ input.error, textarea.error {
     display: none;
     margin-top: 5px;
   }
+
   
+.modal {
+    display: none;
+    background: var(--grey-900-darker);
+    color: white;
+    padding: 2em;
+    border-radius: 1em;
+    gap: 1em;
+    margin: 1em;
+    position: absolute;
+}
+
+.icon-info {
+    display: flex;
+    gap: 1em;
+}
 
 
 @media (min-width: 768px){
@@ -191,6 +208,12 @@ input.error, textarea.error {
 
     .submit {
         grid-area: submit;
+    }
+
+    .modal {
+        top: 1em;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 }

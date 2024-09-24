@@ -7,6 +7,7 @@ document.getElementById('form').addEventListener('submit', function (e) {
     const email = document.getElementById('email');
     const message = document.getElementById('message');
     const check = document.getElementById('check');
+    const modal = document.querySelector('.modal')
   
     // Get error message elements
     const firstNameError = document.getElementById('firstNameError');
@@ -96,7 +97,10 @@ document.getElementById('form').addEventListener('submit', function (e) {
   
     if (isValid) {
         // If the form is valid, submit it
-        alert("Form submitted successfully!");
+        modal.style.display = 'grid';
+        setTimeout(() => {
+          modal.style.display = 'none'
+        }, 2000);
         firstName.value = '';
         lastName.value = '';
         email.value = '';
