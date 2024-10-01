@@ -75,6 +75,7 @@ input:target {
 input[type='radio'], 
 input[type='checkbox'] {
     color: hsl(169, 82%, 27%);
+    accent-color: var(--grey-900-darker);
 }
 .choice {
     flex-direction: row !important; 
